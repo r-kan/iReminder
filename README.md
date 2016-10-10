@@ -13,7 +13,8 @@ A utility to display images with attached phrases in a highly customizable way.
 * Give reminder  
 * Train subconscious  
 
-For example, one can use `iReminder` to keep track new photos of celebrities, to give notification of diet plan, or to harness the power of subconscious by visualizing life goals. Full instrumented example be can be found at <a href='https://github.com/r-kan/iReminder/blob/master/example/README.md'>example/README.md</a>.  
+For example, one can use `iReminder` to keep track new photos of celebrities, to give notification of diet plan, or to harness the power of subconscious by visualizing life goals.  
+Full instrumented example be can be found at <a href='https://github.com/r-kan/iReminder/blob/master/example/README.md'>example/README.md</a>.  
 
 # The major features
 * Download image automatically (search function relies on GCS api)  
