@@ -21,3 +21,20 @@ Full instrumented example be can be found at <a href='https://github.com/r-kan/i
 * Slideshow in a customizable way  
 * Phrases/Sentences can attach to image in a customizable way  
 
+# Command line usage
+```
+usage: iReminder [-h] [-p PHRASES] [-s SETTING] [-v] images [images ...]
+
+iReminder --- The Image Reminder
+
+positional arguments:
+  images                image pattern or pattern file (.list, .json)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PHRASES, --phrase PHRASES
+                        reminder phrase
+  -s SETTING, --setting SETTING
+                        setting file
+  -v, --verbose         verbose mode
+```
