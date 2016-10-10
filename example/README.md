@@ -1,4 +1,4 @@
-# iReminder usage example  
+# Examples  
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case1.run'>case1.run</a>: Grasp cared picture  
 _Emma Watson is my favorite. I definitely won’t miss her newest photos._  
 ```
