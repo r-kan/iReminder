@@ -7,7 +7,7 @@ As the demo shows, `iReminder` relies on <a href ='https://developers.google.com
 
 # What is iReminder?
 A utility to display images with attached phrases in a highly customizable way.  
-Check <a href='https://github.com/r-kan/iReminder/wiki'>`iReminder` Wiki</a> for detailed documentation.
+Check <a href='https://github.com/r-kan/iReminder/wiki'>iReminder Wiki</a> for detailed documentation.
 
 # Typical usage of iReminder
 * Grasp cared picture  
