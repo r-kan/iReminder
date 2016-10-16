@@ -7,6 +7,7 @@ As the demo shows, `iReminder` relies on <a href ='https://developers.google.com
 
 # What is iReminder?
 A utility to display images with attached phrases in a highly customizable way.  
+Check <a href='https://github.com/r-kan/iReminder/wiki'>`iReminder` Wiki</a> for detailed documentation.
 
 # Typical usage of iReminder
 * Grasp cared picture  
@@ -14,7 +15,7 @@ A utility to display images with attached phrases in a highly customizable way.
 * Train subconscious  
 
 For example, one can use `iReminder` to keep track new photos of celebrities, to give notification of diet plan, or to harness the power of subconscious by visualizing life goals.  
-Full instrumented example be can be found <a href='https://github.com/r-kan/iReminder/blob/master/example'>here</a>.  
+Full instrumented example can be found <a href='https://github.com/r-kan/iReminder/blob/master/example'>here</a>.  
 
 # The major features
 * Download image automatically (search function relies on GCS api)  
