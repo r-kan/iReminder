@@ -7,9 +7,8 @@ As the demo shows, `iReminder` relies on <a href ='https://developers.google.com
 
 # What is iReminder?
 A utility to display images with attached phrases in a highly customizable way.  
-Check <a href='https://github.com/r-kan/iReminder/wiki'>iReminder Wiki</a> for detailed documentation.
 
-# Typical usage of iReminder
+# Typical usage
 * Grasp cared picture  
 * Give reminder  
 * Train subconscious  
@@ -22,20 +21,5 @@ Full instrumented example can be found <a href='https://github.com/r-kan/iRemind
 * Slideshow in a customizable way  
 * Phrases/Sentences can attach to image in a customizable way  
 
-# Command line usage
-```
-usage: iReminder [-h] [-p PHRASES] [-s SETTING] [-v] images [images ...]
-
-iReminder --- The Image Reminder
-
-positional arguments:
-  images                image pattern or pattern file (.list, .json)
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -p PHRASES, --phrase PHRASES
-                        reminder phrase
-  -s SETTING, --setting SETTING
-                        setting file
-  -v, --verbose         verbose mode
-```
+# Wiki
+Check <a href='https://github.com/r-kan/iReminder/wiki'>iReminder Wiki</a> for detailed documentation.
