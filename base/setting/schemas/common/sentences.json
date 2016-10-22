@@ -1,0 +1,47 @@
+{
+  "title": "sentences",
+  "oneOf":
+  [
+    {
+      "title": "one sentence",
+      "type": "string"
+    },
+    {
+      "title": "sentences",
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    {
+      "title": "unresolved sentences",
+      "type": "object",
+      "patternProperties":
+      {
+        "description": "sentences with rank or unresolved words by var(attribute_name)",
+        ".*":
+        {
+          "type": "object",
+          "properties":
+          {
+            "rank": {"$ref": "rank.json"},
+            "default_value":
+            {
+              "description": "default value of 'attribute names'",
+              "type": "object",
+              "patternProperties":
+              {
+                ".*": {"type": "string"}
+              }
+            },
+            "restrict":
+            {
+              "description": "one of the patterns from 'target'",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

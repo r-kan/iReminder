@@ -128,7 +128,8 @@ class PhraseGroup(object):
                     for sentence in sentence_data:
                         sentences[sentence] = Sentence.create(sentence_data[sentence], restrict)
                 else:
-                    assert False
+                    assert type(sentence_data) in [str, unicode]
+                    sentences[sentence_data] = Sentence.create(None, restrict)
         return PhraseGroup(name, targets, sentences, rank)
 
 GLOBAL_KEY = "global"

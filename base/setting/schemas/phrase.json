@@ -1,1 +1,32 @@
-
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "phrase setting",
+  "type": "object",
+  "patternProperties":
+  {
+    "description": "a named group of phrases",
+    ".*":
+    {
+      "type": "object",
+      "properties":
+      {
+        "target":
+        {
+          "description": "the image pattern or list/json file basename to be embedded with",
+          "$ref": "common/strings.json"
+        },
+        "rank": {"$ref": "common/rank.json"},
+        "sentence": {"$ref": "common/sentences.json"},
+        "restrict":
+        {
+          "description": "a subset pattern of 'target'",
+          "patternProperties":
+          {
+            ".*": {"$ref": "common/sentences.json"}
+          }
+        }
+      },
+      "required": ["target"]
+    }
+  }
+}
