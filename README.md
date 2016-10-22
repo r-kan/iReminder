@@ -23,3 +23,6 @@ Full instrumented example can be found <a href='https://github.com/r-kan/iRemind
 
 # Wiki
 Check <a href='https://github.com/r-kan/iReminder/wiki'>iReminder Wiki</a> for detailed documentation.
+
+# JSON documentation
+Check <a href='https://r-kan.github.io/iReminder-json-doc/index.html'>iReminder JSON documentation</a> for more details on image/phrase customization.
