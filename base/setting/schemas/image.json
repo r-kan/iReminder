@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "image setting",
+  "type": "object",
+  "properties":
+  {
+    "size":
+    {
+      "type": "array",
+      "items":
+      {
+        "type": {"enum": ["xlarge", "xxlarge", "huge"]}
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "rank": {"$ref": "common/rank.json"},
+    "image":
+    {
+      "type": "object",
+      "patternProperties":
+      {
+        ".*":
+        {
+          "type": "object",
+          "description": "any pattern represents the pictures",
+          "properties":
+          {
+            "rank": {"$ref": "common/rank.json"},
+            "attribute":
+            {
+              "type": "object",
+              "description": "any phrase relates to the pattern",
+              "patternProperties":
+              {
+                ".*": {"$ref": "common/strings.json"}
+              }
+            },
+            "location":
+            {
+              "type": "string",
+              "description": "a directory with jpg/jpeg pictures"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["image"]
+}
