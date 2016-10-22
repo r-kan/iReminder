@@ -1,5 +1,4 @@
 {
-  "title": "sentences",
   "oneOf":
   [
     {
@@ -16,9 +15,9 @@
     {
       "title": "unresolved sentences",
       "type": "object",
+      "description": "sentences with rank or unresolved words by var(attribute_name)",
       "patternProperties":
       {
-        "description": "sentences with rank or unresolved words by var(attribute_name)",
         ".*":
         {
           "type": "object",

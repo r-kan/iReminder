@@ -1,6 +1,5 @@
 {
-  "title": "rank setting",
-  "description": "describe how an item will be selected",
+  "description": "describe factors how an item will be selected",
   "type": "object",
   "properties":
   {
