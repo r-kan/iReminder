@@ -113,6 +113,9 @@ class PhraseGroup(object):
             elif isinstance(raw_data, list):
                 for sentence in raw_data:
                     sentences[sentence] = Sentence.create()
+            else:
+                assert type(raw_data) in [str, unicode]
+                sentences[raw_data] = Sentence.create()
         if RESTRICT_KEY in data:
             raw_data = data[RESTRICT_KEY]
             assert isinstance(raw_data, dict)

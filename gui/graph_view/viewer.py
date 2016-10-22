@@ -51,9 +51,13 @@ class GraphViewer(object):
         self.__root.bind("<Right>", lambda e: e.widget.quit())
         self.__root.bind("<Left>", self.show_previous_image)
         self.__root.bind("<h>", self.toggle_onscreen_help)
+        self.__root.bind("<H>", self.toggle_onscreen_help)
         self.__root.bind("<i>", self.toggle_onscreen_info)
+        self.__root.bind("<I>", self.toggle_onscreen_info)
         self.__root.bind("<p>", self.toggle_pause_slideshow)
+        self.__root.bind("<P>", self.toggle_pause_slideshow)
         self.__root.bind("<q>", user_quit)
+        self.__root.bind("<Q>", user_quit)
         self.__root.bind("<equal>", self.increment_rank)
         self.__root.bind("<minus>", self.decrement_rank)
         self.__cur_image_obj = None
