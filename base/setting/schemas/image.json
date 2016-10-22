@@ -17,20 +17,20 @@
     "rank": {"$ref": "common/rank.json"},
     "image":
     {
+      "description": "any pattern represents the pictures",
       "type": "object",
       "patternProperties":
       {
         ".*":
         {
           "type": "object",
-          "description": "any pattern represents the pictures",
           "properties":
           {
             "rank": {"$ref": "common/rank.json"},
             "attribute":
             {
-              "type": "object",
               "description": "any phrase relates to the pattern",
+              "type": "object",
               "patternProperties":
               {
                 ".*": {"$ref": "common/strings.json"}
@@ -38,8 +38,8 @@
             },
             "location":
             {
-              "type": "string",
-              "description": "a directory with jpg/jpeg pictures"
+              "description": "a directory with jpg/jpeg pictures",
+              "type": "string"
             }
           }
         }
