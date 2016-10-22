@@ -1,0 +1,15 @@
+{
+  "title": "single string or multiple strings",
+  "oneOf": 
+  [
+    { 
+      "title": "one string", 
+      "type": "string" 
+    },
+    { 
+      "title": "array of strings", 
+      "type": "array", 
+      "items": {"type": "string"} 
+    }
+  ]
+}
