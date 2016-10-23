@@ -26,11 +26,15 @@
             "rank": {"$ref": "rank.json"},
             "default_value":
             {
-              "description": "default value of 'attribute names'",
+              "description": "the referenced attribute",
               "type": "object",
               "patternProperties":
               {
-                ".*": {"type": "string"}
+                ".*": 
+                {
+                  "description": "the default value (use when attribute not in image)",
+                  "type": "string"
+                }
               }
             },
             "restrict":
