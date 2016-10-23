@@ -6,10 +6,11 @@
   {
     "size":
     {
+      "description": "target size of the image",
       "type": "array",
       "items":
       {
-        "type": {"enum": ["xlarge", "xxlarge", "huge"]}
+        "type": {"enum": ["icon", "small", "medium", "large", "xlarge", "xxlarge", "huge"]}
       },
       "minItems": 1,
       "uniqueItems": true
