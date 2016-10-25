@@ -1,8 +1,8 @@
 # Examples  
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case1.run'>case1.run</a>: Grasp cared picture  
-_Emma Watson is my favorite. I definitely won’t miss her newest photos._  
+_I admire the work of Immanuel Kant, especially on the talk of ethics. I would like to see how those words are valued nowadays._  
 ```
-./iReminder "Emma Watson"  
+./iReminder "Kant famous"  
 ```
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case2.run'>case2.run</a>: Give reminder  
 _A reminder of the diet plan before dinner time might be quite beneficial._  
