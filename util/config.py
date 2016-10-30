@@ -5,6 +5,8 @@ from __future__ import print_function, unicode_literals
 from util.global_def import set_phrase_appear_ratio, get_phrase_appear_ratio, \
     set_slideshow_frequency, get_slideshow_frequency, \
     set_search_latency, get_search_latency, \
+    set_search_unit_size, get_search_unit_size, \
+    set_search_img_size, get_search_img_size, \
     set_api_key, set_cx, get_api_key, get_cx, \
     set_data_home, get_data_home, \
     set_phrase_font_size, get_phrase_font_size, \
@@ -43,6 +45,12 @@ class Config(object):
             self.__config.get("search", "cx")
         search_latency = get_search_latency() if not self.__config.has_option("search", "search_latency") else \
             float(self.__config.get("search", "search_latency"))
+        search_unit_size = get_search_unit_size() if not self.__config.has_option("search", "search_unit_size") else \
+            int(self.__config.get("search", "search_unit_size"))
+        if self.__config.has_option("search", "search_img_size"):
+            search_img_size = list(set(self.__config.get("search", "search_img_size").split('|')))  # 'set' to uniquify
+        else:
+            search_img_size = get_search_img_size()
         set_data_home(data_home)
         set_accessible_pivot(accessible_pivot)
         set_slideshow_frequency(slideshow_frequency)
@@ -50,13 +58,16 @@ class Config(object):
         set_phrase_appear_ratio(phrase_appear_ratio)
         set_phrase_font_size(phrase_font_size)
         set_search_latency(search_latency)
+        set_search_unit_size(search_unit_size)
+        set_search_img_size(search_img_size)
         set_api_key(api_key)
         set_cx(cx)
         print("=======  iReminder setting  =============")  # currently, we only show selected entries
-        print("data home:       ", data_home)
-        print("slideshow:       ", slideshow_frequency)
-        print("phrase ratio:    ", phrase_appear_ratio)
-        print("search latency:  ", search_latency)
+        print("data home:        ", data_home)
+        print("slideshow:        ", slideshow_frequency)
+        print("phrase ratio:     ", phrase_appear_ratio)
+        print("search latency:   ", search_latency)
+        print("search unit size: ", search_unit_size)
         print("========================================")
 
     def get_setting(self, section, option):

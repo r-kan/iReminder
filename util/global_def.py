@@ -33,8 +33,12 @@ NA = -1
 __DATA_HOME = ""
 __SLIDESHOW_FREQUENCY = 10  # the frequency in second to have slideshow
 __PHRASE_APPEAR_RATIO = 100  # a fixed percentage ratio (0-100) to show phrase
-__PHRASE_FONT_SIZE = 64#32  # phrase font size in pixel
-__SEARCH_LATENCY = 3#1
+__PHRASE_FONT_SIZE = 32  # phrase font size in pixel
+__SEARCH_LATENCY = 3
+__SEARCH_UNIT_SIZE = 10
+
+__VALID_IMG_SIZE = ["icon", "small", "medium", "large", "xlarge", "xxlarge", "huge"]
+__SEARCH_IMG_SIZE = ["xlarge"]
 __API_KEY = ''
 __CX = ''
 __FULLSCREEN_MODE2 = False
@@ -64,13 +68,21 @@ def get_fullscreen_mode2():
     return __FULLSCREEN_MODE2
 
 
+__BUILTIN_API_KEY = "AIzaSyDcYhAlzkSqurlhVGqL9T0N2y7pfC_PBOk"
+__BUILTIN_CX = "008963192842962532112:qahbrgj5bu4"
+
+
 def set_api_key(api_key):
     global __API_KEY
+    if api_key == __BUILTIN_API_KEY:
+        warning("built-in 'api_key' can exhaust search quota indefinitely, suggest to create your own 'api_key'")
     __API_KEY = api_key
 
 
 def set_cx(cx):
     global __CX
+    if cx == __BUILTIN_CX:
+        warning("built-in 'cx' is for an runnable example, suggest to create your own 'cx'")
     __CX = cx
 
 
@@ -90,6 +102,35 @@ def set_search_latency(latency):
 
 def get_search_latency():
     return __SEARCH_LATENCY
+
+
+def set_search_unit_size(unit_size):
+    assert unit_size >= 1
+    if unit_size <= 10:  # one GCS search shall give 10 results, then no reason to have unit_size less than 10
+        unit_size = 10
+    global __SEARCH_UNIT_SIZE
+    __SEARCH_UNIT_SIZE = unit_size
+
+
+def get_search_unit_size():
+    return __SEARCH_UNIT_SIZE
+
+
+def set_search_img_size(img_size):
+    assert type(img_size) is list
+    recognized = []
+    for size_item in img_size:
+        assert type(size_item) in [str, unicode]
+        if size_item not in __VALID_IMG_SIZE:
+            warning("[config] '%s' is not a value image size specifier" % size_item)
+        else:
+            recognized.append(str(size_item))
+    global __SEARCH_IMG_SIZE
+    __SEARCH_IMG_SIZE = recognized
+
+
+def get_search_img_size():
+    return __SEARCH_IMG_SIZE
 
 
 def get_slideshow_frequency():

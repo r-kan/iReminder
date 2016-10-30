@@ -12,7 +12,7 @@ import urllib2
 from datetime import datetime
 from base.crawler.graph_search import Crawler
 from util.global_def import debug, info, error
-from util.global_def import NA, get_data_home, get_delim
+from util.global_def import NA, get_data_home, get_delim, get_search_img_size
 from util.network import reachable as network_reachable
 from util.select import get_random_dict_key, get_weighted_random_dict_key
 from util.serialize import save, load
@@ -47,7 +47,7 @@ class GraphFetcher(object):
 
     def __init__(self, setting=None, size=None, option=None):
         self.__setting = setting
-        self.__size = size if size else ["large", "xlarge", "xxlarge", "huge"]
+        self.__size = size if size else get_search_img_size()
         self.__option = option
         self.__network_reachable = network_reachable()
         self.__has_write = False

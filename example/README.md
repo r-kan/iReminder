@@ -20,6 +20,7 @@ Check the content of <a href='https://github.com/r-kan/iReminder/blob/master/exa
   }
 }
 ```
+Note that this example also demonstrates the feature without using Google Custom Search.  
 
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case3.run'>case3.run</a>: Train subconscious  
 _The subconscious mind, which thinks in images and feelings, has such a great power. Visualize our goal, with images and motivated phrases, can thus be a way harness this power to our advantage._  
