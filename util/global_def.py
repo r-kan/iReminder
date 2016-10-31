@@ -31,14 +31,14 @@ def get_delim():
 
 NA = -1
 __DATA_HOME = ""
-__SLIDESHOW_FREQUENCY = 10  # the frequency in second to have slideshow
-__PHRASE_APPEAR_RATIO = 100  # a fixed percentage ratio (0-100) to show phrase
-__PHRASE_FONT_SIZE = 32  # phrase font size in pixel
-__SEARCH_LATENCY = 3
-__SEARCH_UNIT_SIZE = 10
+__SLIDESHOW_RATE = 10  # the frequency in second to have slideshow
+__ATTACH_RATE = 100  # a fixed percentage ratio (0-100) to show phrase
+__FONT_SIZE = 32  # phrase font size in pixel
+__LATENCY = 3
+__SEARCH_SIZE = 10
 
 __VALID_IMG_SIZE = ["icon", "small", "medium", "large", "xlarge", "xxlarge", "huge"]
-__SEARCH_IMG_SIZE = ["xlarge"]
+__IMG_SIZE = ["xlarge"]
 __API_KEY = ''
 __CX = ''
 __FULLSCREEN_MODE2 = False
@@ -94,29 +94,29 @@ def get_cx():
     return __CX if "" != __CX else None
 
 
-def set_search_latency(latency):
+def set_latency(latency):
     assert latency >= 1
-    global __SEARCH_LATENCY
-    __SEARCH_LATENCY = latency
+    global __LATENCY
+    __LATENCY = latency
 
 
-def get_search_latency():
-    return __SEARCH_LATENCY
+def get_latency():
+    return __LATENCY
 
 
-def set_search_unit_size(unit_size):
-    assert unit_size >= 1
-    if unit_size <= 10:  # one GCS search shall give 10 results, then no reason to have unit_size less than 10
-        unit_size = 10
-    global __SEARCH_UNIT_SIZE
-    __SEARCH_UNIT_SIZE = unit_size
+def set_search_size(search_size):
+    assert search_size >= 1
+    if search_size <= 10:  # one GCS search shall give 10 results, then no reason to have unit_size less than 10
+        search_size = 10
+    global __SEARCH_SIZE
+    __SEARCH_SIZE = search_size
 
 
-def get_search_unit_size():
-    return __SEARCH_UNIT_SIZE
+def get_search_size():
+    return __SEARCH_SIZE
 
 
-def set_search_img_size(img_size):
+def set_img_size(img_size):
     assert type(img_size) is list
     recognized = []
     for size_item in img_size:
@@ -125,42 +125,42 @@ def set_search_img_size(img_size):
             warning("[config] '%s' is not a value image size specifier" % size_item)
         else:
             recognized.append(str(size_item))
-    global __SEARCH_IMG_SIZE
-    __SEARCH_IMG_SIZE = recognized
+    global __IMG_SIZE
+    __IMG_SIZE = recognized
 
 
-def get_search_img_size():
-    return __SEARCH_IMG_SIZE
+def get_img_size():
+    return __IMG_SIZE
 
 
-def get_slideshow_frequency():
-    return __SLIDESHOW_FREQUENCY
+def get_slideshow_rate():
+    return __SLIDESHOW_RATE
 
 
-def set_slideshow_frequency(slideshow_frequency):
-    assert slideshow_frequency > 0
-    global __SLIDESHOW_FREQUENCY
-    __SLIDESHOW_FREQUENCY = slideshow_frequency
+def set_slideshow_rate(slideshow_rate):
+    assert slideshow_rate > 0
+    global __SLIDESHOW_RATE
+    __SLIDESHOW_RATE = slideshow_rate
 
 
-def set_phrase_appear_ratio(ratio):
-    assert 0 <= ratio <= 100
-    global __PHRASE_APPEAR_RATIO
-    __PHRASE_APPEAR_RATIO = ratio
+def set_attach_rate(attach_rate):
+    assert 0 <= attach_rate <= 100
+    global __ATTACH_RATE
+    __ATTACH_RATE = attach_rate
 
 
-def get_phrase_appear_ratio():
-    return __PHRASE_APPEAR_RATIO
+def get_attach_rate():
+    return __ATTACH_RATE
 
 
-def set_phrase_font_size(font_size):
+def set_font_size(font_size):
     assert font_size > 0
-    global __PHRASE_FONT_SIZE
-    __PHRASE_FONT_SIZE = font_size
+    global __FONT_SIZE
+    __FONT_SIZE = font_size
 
 
-def get_phrase_font_size():
-    return int(__PHRASE_FONT_SIZE)
+def get_font_size():
+    return int(__FONT_SIZE)
 
 
 def set_data_home(home):

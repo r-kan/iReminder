@@ -20,7 +20,7 @@ class Status(object):
 class GraphDirHandler(object):
     """handle the existed image files within given directory"""
     RECOGNIZED_IMAGE_EXT = ["jpg", "JPG", "jpeg", "JPEG"]
-    CACHE_FILE = "reminder.pickle"
+    CACHE_FILE = "iReminder.pickle"
 
     def __init__(self, location):
         self.__location = location
@@ -83,7 +83,7 @@ class GraphDirHandler(object):
             for base_file in files:
                 basename, ext = os.path.splitext(base_file)
                 if ext.replace(".", "") in GraphDirHandler.RECOGNIZED_IMAGE_EXT:
-                    image_files.append((root + base_file).replace(self.__location, ""))
+                    image_files.append((root + base_file).replace(self.__location + get_delim(), ""))
         if not image_files:
             if cache_existed:
                 os.remove(cache_file)

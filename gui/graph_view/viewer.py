@@ -15,7 +15,7 @@ from base.setting.utility import RankArbitrator as Arbitrator
 from base.setting.image import Image as ImageObj
 from util.color import get_random_color
 from util.global_def import debug, info, error, is_mac_os
-from util.global_def import NA, get_slideshow_frequency, get_phrase_appear_ratio, get_fullscreen_mode2
+from util.global_def import NA, get_slideshow_rate, get_attach_rate, get_fullscreen_mode2
 
 __BG__ = 'black'
 
@@ -101,7 +101,7 @@ class GraphViewer(object):
         self.__graph_history.appendleft(last_graph)
         self.set_graph(*self.__graph_history.pop())
         self.cancel_pending_jobs()
-        self.prepare_for_next_view(get_slideshow_frequency() * 1000)
+        self.prepare_for_next_view(get_slideshow_rate() * 1000)
 
     def increment_rank(self, *unused):
         info("increase rank %s" % self.__cur_graph_file)
@@ -205,7 +205,7 @@ class GraphViewer(object):
         return sentence
 
     def select_phrase(self, pattern):
-        if pattern not in self.__phrase_binding or get_phrase_appear_ratio() < float(random.randrange(0, 101)):
+        if pattern not in self.__phrase_binding or get_attach_rate() < float(random.randrange(0, 101)):
             self.__phrase_var.set("")
             return
         phrase_arbitrator = Arbitrator()
@@ -232,7 +232,7 @@ class GraphViewer(object):
 
     def timer_action(self, user_next_image=False):
         if not user_next_image and self.__pause_slideshow:
-            self.prepare_for_next_view(get_slideshow_frequency() * 1000)
+            self.prepare_for_next_view(get_slideshow_rate() * 1000)
             return
         success = self.set_graph(self.select_pattern())
         if not success:
@@ -243,7 +243,7 @@ class GraphViewer(object):
             GraphViewer.CURR_FAIL_COUNT += 1
             return
         GraphViewer.CURR_FAIL_COUNT = 0
-        self.prepare_for_next_view(get_slideshow_frequency() * 1000)
+        self.prepare_for_next_view(get_slideshow_rate() * 1000)
 
     def get_adjusted_geom(self, width, height):
         """output: resize_width, resize_height, x_pos, y_pos"""
@@ -398,10 +398,10 @@ class GraphViewer(object):
         smallest_x = 10
         # Not so good to have fixed 0.25 value, maybe we can enhance it later
         largest_x = 0.25 * self.__root.winfo_screenwidth()
-        from util.global_def import get_phrase_font_size
+        from util.global_def import get_font_size
         return self.__canvas.create_text(random.randrange(smallest_x, largest_x),
                                          random.randrange(smallest_y, largest_y),
-                                         anchor=Tkinter.SW, font=("system", -1 * get_phrase_font_size()),
+                                         anchor=Tkinter.SW, font=("system", -1 * get_font_size()),
                                          text=self.__phrase_var.get(),
                                          fill=get_random_color(),
                                          activefill=get_random_color())

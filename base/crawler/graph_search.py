@@ -7,7 +7,7 @@ import os
 import requests
 from datetime import datetime, timedelta
 from util.global_def import debug, info, error
-from util.global_def import NA, get_data_home, get_search_unit_size
+from util.global_def import NA, get_data_home, get_search_size
 from util.network import reachable as network_reachable
 from util.serialize import save, load
 from util.select import RankHolder, get_weighted_random_dict_key
@@ -72,7 +72,7 @@ class Crawler(object):
         next_size_ratio = {size: 0 for size in size_list}  # key: size, value: number of new result (initial with 0)
         start = {size: 1 for size in size_list}  # key: size, value: next search start offset (start from 1 by google)
         tried_size = 0
-        while tried_size < get_search_unit_size():
+        while tried_size < get_search_size():
             chosen_size = get_weighted_random_dict_key(dice)
             this_urls, success = Crawler.crawl_by_asking_google_search(pattern, start[chosen_size], chosen_size, option)
             if not success:
@@ -110,9 +110,9 @@ class Crawler(object):
         #       => if no previous result is new, then we will have a search after 'get_search_unit_size()' days
         valid_day_size = len(urls) / new_result if new_result > 0 else \
             1 if NA is new_result else \
-            get_search_unit_size()  # new_result = 0 => no new result before
-        from util.global_def import get_search_latency
-        valid_day_size *= get_search_latency()
+            get_search_size()  # new_result = 0 => no new result before
+        from util.global_def import get_latency
+        valid_day_size *= get_latency()
         current_date = datetime.today()
         date_diff = current_date - retrieved_date
         if date_diff > timedelta(days=valid_day_size):  # 'valid_day_size' is the valid duration of search result

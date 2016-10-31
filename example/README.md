@@ -2,7 +2,7 @@
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case1.run'>case1.run</a>: Grasp cared picture  
 _I admire the work of Immanuel Kant, especially on the talk of ethics. I would like to see how those words are valued nowadays._  
 ```
-./iReminder "Kant famous"  
+./iReminder "Kant famous" -s setting.ini
 ```
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case2.run'>case2.run</a>: Give reminder  
 _A reminder of the diet plan before dinner time might be quite beneficial._  
@@ -25,7 +25,7 @@ Note that this example also demonstrates the feature without using Google Custom
 * <a href='https://github.com/r-kan/iReminder/blob/master/example/case3.run'>case3.run</a>: Train subconscious  
 _The subconscious mind, which thinks in images and feelings, has such a great power. Visualize our goal, with images and motivated phrases, can thus be a way harness this power to our advantage._  
 ```
-./iReminder dream patience -p maxim.list
+./iReminder dream patience -p maxim.list -s setting.ini
 ```
 Check the content of <a href='https://github.com/r-kan/iReminder/blob/master/example/maxim.list'>maxim.list</a>, and try add more maxims to see how it works.
 
