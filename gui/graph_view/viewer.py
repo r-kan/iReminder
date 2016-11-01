@@ -399,8 +399,8 @@ class GraphViewer(object):
         # Not so good to have fixed 0.25 value, maybe we can enhance it later
         largest_x = 0.25 * self.__root.winfo_screenwidth()
         from util.global_def import get_font_size
-        return self.__canvas.create_text(random.randrange(smallest_x, largest_x),
-                                         random.randrange(smallest_y, largest_y),
+        return self.__canvas.create_text(random.randrange(int(smallest_x), int(largest_x)),
+                                         random.randrange(int(smallest_y), int(largest_y)),
                                          anchor=Tkinter.SW, font=("system", -1 * get_font_size()),
                                          text=self.__phrase_var.get(),
                                          fill=get_random_color(),

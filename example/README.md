@@ -9,14 +9,15 @@ _A reminder of the diet plan before dinner time might be quite beneficial._
 ```
 ./iReminder diet.json
 ```
-Check the content of <a href='https://github.com/r-kan/iReminder/blob/master/example/diet.json'>diet.json</a>, and don't forget to modify the value of `location` with a directory of pictures.  
+Check the content of <a href='https://github.com/r-kan/iReminder/blob/master/example/diet.json'>diet.json</a>.  
+You need to modify the value of `location` with a directory of pictures, and probably, the `period` value, or you may see nothing.  
 
 ```json
 // file 'diet.json'
 {
   "image":
   {
-    "diet": {"location": "/Users/rkan/diet_pictures", "rank": {"period": "1600-1700"}}
+    "diet": {"location": "/Users/rkan/diet_picture", "rank": {"period": "1600-1700"}}
   }
 }
 ```
