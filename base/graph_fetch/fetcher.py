@@ -8,6 +8,7 @@ import httplib
 import os
 import random
 import ssl
+import sys
 import urllib2
 from datetime import datetime
 from base.crawler.graph_search import Crawler
@@ -54,6 +55,13 @@ class GraphFetcher(object):
 
     @staticmethod
     def get_cache_file(pattern):
+        if not os.path.exists(pickle_home()):
+            try:
+                mkdir_p(pickle_home())
+            except OSError as e:
+                error("[fetch] cannot create program directory, program exits:")
+                error(str(e))
+                sys.exit()
         return pickle_home() + str(pattern) + ".pickle"
 
     @staticmethod
@@ -155,7 +163,6 @@ class GraphFetcher(object):
             except OSError as e:
                 error("[fetch] cannot create program directory, program exits:")
                 error(str(e))
-                import sys
                 sys.exit()
         abs_graph_file = graph_dir + "image_" + file_encoding + ".jpg"
         if os.path.exists(abs_graph_file):
