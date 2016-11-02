@@ -6,7 +6,7 @@ from sys import version_info
 
 if __name__ == "__main__":
     if version_info.major > 2:
-        print("python version >= 3 is not supported, current version %s.%s.%s" % (version_info.major, version_info.minor, version_info.micro))
+        print("python version >= 3 is not supported, current version is %s.%s.%s" % (version_info.major, version_info.minor, version_info.micro))
         sys.exit(1)
     from main import IReminder
     IReminder().run()
