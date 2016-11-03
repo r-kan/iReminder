@@ -91,7 +91,10 @@ class GraphViewer(object):
         if self.__cur_image_obj.location:
             return  # spec.: not support remove image that user 'specified'
         info("remove image %s" % self.__cur_graph_file)
-        self.__graph_history.remove([self.__cur_image_obj, self.__cur_graph_file])
+        entry = [self.__cur_image_obj, self.__cur_graph_file]
+        self.__graph_history.remove(entry)
+        while self.__graph_history.count(entry) > 0:
+            self.__graph_history.remove(entry)
         GraphFetcher.handle_image(self.__cur_graph_file, DELETE)
         self.cancel_pending_jobs()
         self.timer_action(True)
