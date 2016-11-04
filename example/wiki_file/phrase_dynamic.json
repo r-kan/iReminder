@@ -1,0 +1,13 @@
+{
+  "dynamic phrases":
+  {
+    "target": "image_animation",
+    "sentence":
+    {
+      "var(main_actor)：I starred in var(`pattern)!":
+      {
+        "default_value": {"main_actor": "main actor of var(`pattern)"}
+      }
+    }
+  }
+}

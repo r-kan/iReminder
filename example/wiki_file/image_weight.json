@@ -1,0 +1,7 @@
+{
+  "image":
+  {
+    "patternA": {"rank": {"kind": "WEIGHT", "value": 1}},
+    "patternB": {"rank": {"kind": "WEIGHT", "value": 2}}
+  }
+}

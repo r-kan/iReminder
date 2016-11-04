@@ -1,0 +1,7 @@
+{
+  "image":
+  {
+    "patternC": {"rank": {"kind": "PERCENTAGE", "value": 25}},
+    "patternD": {"rank": {"kind": "PERCENTAGE", "value": 50}}
+  }
+}

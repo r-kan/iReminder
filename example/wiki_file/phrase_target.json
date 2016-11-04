@@ -1,0 +1,7 @@
+{
+  "phrase with target":
+  {
+    "target": ["patternA", "patternD"],
+    "sentence": "This sentence applies for patternA and patternD images"
+  }
+}
