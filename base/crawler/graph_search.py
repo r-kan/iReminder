@@ -149,7 +149,7 @@ class Crawler(object):
         if not api_key or not cx:
             if not Crawler._HAS_SHOW_NO_SEARCH_MSG:
                 Crawler._HAS_SHOW_NO_SEARCH_MSG = True
-                info("as api_key and cx for Google custom search is not available, no image search will be issued")
+                info("as api_key and cx for Google Custom Search is not available, no image search will be issued")
             return [], False
         size_option = "&imgSize=" + size if size else ""
         full_option = size_option + (option if option else "")
