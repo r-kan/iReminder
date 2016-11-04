@@ -16,14 +16,15 @@ class IReminder(object):
         # TODO: break the limit that positional argument need to be in a continuous sequence
         # e.g., the following will error "aa bb -p cc dd" (error on 'dd')
         parser.add_argument('images', nargs='+', help='image pattern or pattern file (.list, .json)')
-        parser.add_argument("-p", "--phrase", dest="phrases", action='append', default=None, help="reminder phrase")
-        parser.add_argument("-s", "--setting", dest="setting", default=None, help="setting file")
+        parser.add_argument("-p", "--phrase", dest="phrases", action='append', default=None,
+                            help="phrase or phrase file (.list, .json)")
+        parser.add_argument("-c", "--config", dest="config", default=None, help="configuration file")
         parser.add_argument("-v", "--verbose", dest="verbose", action="store_const", const=DEBUG, help="verbose mode")
         args = parser.parse_args()
         set_logging_values(level=args.verbose if args.verbose else INFO, in_format='')
-        if args.setting:
+        if args.config:
             from util.config import Config
-            Config(args.setting).set_general_setting()
+            Config(args.config).set_general_setting()
         self.__image_setting = IReminder.flatten_settings(args.images)
         self.__phrase_setting = IReminder.flatten_settings(args.phrases)
         self.print_myself(args.verbose)
