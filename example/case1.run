@@ -1,1 +1,1 @@
-./iReminder "Kant famous" -s setting.ini
+./iReminder "Kant famous" -c config.ini
