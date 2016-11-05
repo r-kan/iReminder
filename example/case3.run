@@ -1,1 +1,1 @@
-./iReminder dream patience -p maxim.list -c config.ini
+./iReminder dream patience -p maxim.list -s setting.ini

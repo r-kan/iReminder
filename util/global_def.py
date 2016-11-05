@@ -176,7 +176,7 @@ def get_data_home():
 
 
 def get_user_config_file():
-    return __DATA_HOME + "config.ini"
+    return __DATA_HOME + "setting.ini"
 
 
 def config_action():
