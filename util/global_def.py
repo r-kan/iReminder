@@ -82,7 +82,7 @@ def set_api_key(api_key):
 def set_cx(cx):
     global __CX
     if cx == __BUILTIN_CX:
-        warning("built-in 'cx' is for an runnable example, suggest to create your own 'cx'")
+        warning("built-in 'cx' is for a runnable example, suggest to create your own 'cx'")
     __CX = cx
 
 
