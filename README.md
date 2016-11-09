@@ -6,7 +6,7 @@ _~as much as you can imagine~_
 As the demo shows, `iReminder` relies on <a href ='https://developers.google.com/custom-search/'>Google Custom Search (GCS)</a> to locate new images. Thus to bring out the full power of `iReminder`, just go summit a free GCS account (and obtain **api_key** & **cx** of image search) if you do not have one. Learn more about GCS in <a href='https://github.com/r-kan/iReminder/wiki#faq'>iReminder Wiki FAQ</a>.    
 
 # What is iReminder?
-A utility to display images with attached phrases in a highly customizable way.  
+A utility to perform on-the-fly image slideshow with attached phrases in a highly customizable way.  
 
 # Typical usage
 * Grasp cared picture  
