@@ -1,5 +1,5 @@
 # iReminder - the image reminder
-_~as much as you can imagine~_  
+_\~as much as you can imagine\~_  
   
 <a href="https://www.youtube.com/watch?v=HkrNbj4OtMQ" target="_blank"><img border="0" alt="iReminder video demonstration" src="https://raw.githubusercontent.com/r-kan/r-kan.github.io/master/images/iReminder/demo_head.jpg" width="475" height="266"></a>
 
